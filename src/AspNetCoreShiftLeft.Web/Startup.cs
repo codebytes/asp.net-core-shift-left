@@ -31,7 +31,8 @@ namespace AspNetCoreShiftLeft.Web
                         diskStorageOptions.AddDrive(@"c:\", 5000);
                     }, "C Drive", HealthStatus.Degraded)
                     .AddApplicationInsightsPublisher();
-            services.AddHealthChecksUI();
+            services.AddHealthChecksUI()
+                    .AddInMemoryStorage();
             
             services.AddApplicationInsightsTelemetry(Configuration);
             services.AddRazorPages();
